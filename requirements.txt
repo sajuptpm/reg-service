@@ -1,0 +1,10 @@
+flask-restful
+Babel==1.3
+iso8601==0.1.8
+netaddr==0.7.10
+oslo.config==1.2.1
+pbr==0.5.23
+python-keystoneclient==0.4.1
+requests==2.0.1
+six==1.4.1
+wsgiref==0.1.2
