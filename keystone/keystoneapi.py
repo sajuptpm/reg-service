@@ -39,7 +39,7 @@ def create_user(name, password, email=None, description=None, enabled=False, **k
         raise keystoneclient.apiclient.exceptions.Conflict("User already exist")
     try:
         domain = get_default_domain(keystone) 
-        project = create_project(domain, keystone)
+        project = create_project(domain, name, keystone)
         role = get_default_role(keystone)
         ##SM:domain is optional
         user = _create_user(name, domain=domain, project=project, password=password, 
@@ -64,14 +64,15 @@ def delete_user(id, keystone=None):
     keystone.users.delete(id)
 
 
-def create_project(domain, keystone=None):
+def create_project(domain, name=None, keystone=None):
     """
     """
     project = None
-    project_name = get_unique_project_name()
+    if not name:
+        name = get_unique_project_name()
     if not keystone:
         keystone = get_client()
-    project = keystone.projects.create(project_name, domain)
+    project = keystone.projects.create(name, domain)
     return project
 
 
