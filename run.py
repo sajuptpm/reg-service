@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask.ext.restful import Api
 import logging
@@ -10,7 +11,11 @@ api = Api(app)
 
 #http://flask.pocoo.org/docs/errorhandling/?highlight=logging
 #https://gist.github.com/ibeex/3257877
-handler = RotatingFileHandler('log/service.log', maxBytes=10000, backupCount=1)
+logfile = app.config.get("LOGFILE")
+logfile_size = app.config.get("LOGFILE_SIZE", 100000)
+if not logfile:
+	logfile = os.path.join(os.path.dirname(os.path.realpath(__file__)))+'/log/service.log'
+handler = RotatingFileHandler(logfile, maxBytes=logfile_size, backupCount=1)
 handler.setLevel(logging.INFO)
 app.logger.addHandler(handler)
 
