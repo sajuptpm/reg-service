@@ -1,0 +1,11 @@
+recursive-include keystone *.py
+recursive-include wsgi *.wsgi
+
+include LICENSE
+include run.py
+include __init__.py
+include __config__.py
+include readme.txt
+include requirements.txt
+include log
+
