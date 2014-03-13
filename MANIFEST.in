@@ -1,5 +1,5 @@
 recursive-include regservice *.py *.wsgi
 
 include LICENSE
-include readme.txt
+include README.rst
 include requirements.txt
