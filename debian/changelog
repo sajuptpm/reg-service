@@ -1,0 +1,6 @@
+jiocloud-registration-service (0.1~jiocloud0) precise; urgency=low
+
+  * Manual build for JioCloud.
+
+ -- Soren Hansen <Soren.Hansen@ril.com>  Mon, 10 Mar 2014 11:01:19 +0530
+

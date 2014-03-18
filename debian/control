@@ -1,0 +1,19 @@
+Source: jiocloud-registration-service
+Section: net
+Priority: extra
+Maintainer: Soren Hansen <Soren.Hansen@ril.com>
+Build-Depends: debhelper (>= 8.0.0),
+ python-pbr,
+ python-all (>= 2.6.6-3~),
+ python-setuptools
+Standards-Version: 3.9.3
+
+Package: jiocloud-registration-service
+Section: python
+Architecture: all
+Depends:
+ apache2 | httpd,
+ libapache2-mod-wsgi (>= 2.3),
+ ${python:Depends}
+Description: Registration service
+ Registration service
