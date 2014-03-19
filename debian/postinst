@@ -2,7 +2,8 @@
 
 if [ $1 == configure ]
 then
-	chown www-data /var/log/jiocloud-registration-service
+	chown www-data:www-data /var/log/jiocloud-registration-service
+	chmod 775 /var/log/jiocloud-registration-service
 fi
 
 #DEBHELPER#
