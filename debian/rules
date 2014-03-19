@@ -10,3 +10,11 @@ override_dh_install:
 	dh_install
 	BASEDIR=$$(ls -d debian/jiocloud-registration-service/usr/lib/*/*/regservice  | grep $$(pyversions -r) | sed -e s%debian/jiocloud-registration-service%%g); \
 	sed -e s^%BASEDIR%^$${BASEDIR}^ debian/apache.conf > debian/jiocloud-registration-service/etc/apache2/conf.d/jiocloud-registration-service.conf
+
+override_dh_python2:
+	dh_python2
+	mv debian/jiocloud-registration-service/usr/share/pyshared/regservice/config.py debian/jiocloud-registration-service/etc/jiocloud-registration-service/global_config.py
+	ln -sf /etc/jiocloud-registration-service/global_config.py debian/jiocloud-registration-service/usr/share/pyshared/regservice/config.py
+
+	mv debian/jiocloud-registration-service/usr/share/pyshared/regservice/keystone/settings.py debian/jiocloud-registration-service/etc/jiocloud-registration-service/keystone_settings.py
+	ln -sf /etc/jiocloud-registration-service/keystone_settings.py debian/jiocloud-registration-service/usr/share/pyshared/regservice/keystone/settings.py
