@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $1 == configure ]
+then
+	chown www-data /var/log/jiocloud-registration-service
+fi
+
+#DEBHELPER#

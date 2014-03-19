@@ -15,5 +15,5 @@ sys.stdout = sys.stderr
 #sys.path.append('/usr/share/openstack_horizon_reg_service/')
 
 ##Create appilcation for our app
-from openstack_horizon_reg_service.run import app as application
+from regservice.run import app as application
 
