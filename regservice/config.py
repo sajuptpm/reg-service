@@ -1,4 +1,4 @@
-DEBUG = True
+DEBUG = False
 LOGFILE = None
 LOGFILE_SIZE = 100000
 if DEBUG:
