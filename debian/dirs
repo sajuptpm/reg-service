@@ -1,4 +1,4 @@
-etc/apache2/sites-enabled
+etc/apache2/conf-enabled
 etc/apache2/conf.d
 etc/jiocloud-registration-service
 var/log/jiocloud-registration-service
