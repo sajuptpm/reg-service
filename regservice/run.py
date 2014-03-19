@@ -6,7 +6,7 @@ from logging.handlers import RotatingFileHandler
 from keystone.views import UserAPI, UserActivationAPI
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_object('regservice.config')
 api = Api(app)
 
 #http://flask.pocoo.org/docs/errorhandling/?highlight=logging
